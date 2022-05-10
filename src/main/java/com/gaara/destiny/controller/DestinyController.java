@@ -50,4 +50,21 @@ public class DestinyController {
 //        return Destiny.getXXInfoByindexAndXX(indexOf64,xx).toString();
     }
 
+    /**
+     * @Author Gaara
+     * 查询卦相和爻辞
+     * @param num1
+     * @param num2
+     * @return
+     */
+    @GetMapping("/destiny/{num1}/{num2}")
+    public static JSONObject getGuaAndX(@PathVariable("num1")Integer num1, @PathVariable("num2")Integer num2){
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("卦",Destiny.getAdmin64ForIndex(num1));
+        jsonObject.put("卦相",Destiny.getContextForIndex(num1));
+        jsonObject.put("卦辞",Destiny.getAdmin64Info(num1));
+        jsonObject.put("爻","第"+num2+"爻");
+        jsonObject.put("爻词",Destiny.getXXInfoByindexAndXX(num1,num2));
+        return jsonObject;
+    }
 }
