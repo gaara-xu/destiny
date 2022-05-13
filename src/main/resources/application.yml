@@ -1,2 +1,9 @@
 server:
   port: 8443
+spring:
+  thymeleaf:
+    cache: true
+    encoding: UTF-8
+    suffix: .html
+    mode: LEGACYHTML5
+    prefix: classpath:/static/

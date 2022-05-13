@@ -1,0 +1,9 @@
+/* Header */
+.one {
+    margin: 30px auto;
+    height: 90%;
+    writing-mode: vertical-rl;/*从左向右 从右向左是 writing-mode: vertical-rl;*/
+    font: 20px "microsoft yahei",Helvetica,Tahoma,Arial,"Microsoft jhengHei",sans-serif;
+    color: #FFFFFF;
+    background-color:transparent;
+}
