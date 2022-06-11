@@ -1,0 +1,52 @@
+<html>
+<script language="JavaScript" src="js/jquery-3.3.1js"></script>
+
+<body>
+
+<p id="red"></p><p id="blue"></p>
+<script language="JavaScript">
+$(document).ready(function(){
+  $.ajax({
+		url : "https://www.random.org/integers/?num=10&min=1&max=33&col=50&base=10&format=plain&rnd=new",
+		type : "get",
+		success : function(data) {
+			var arr = data.split(/[\s]+/);
+			for ( var i = 0; i <arr.length; i++){
+					arr[i] = parseInt(arr[i]);
+			}
+			var arrN  = [];
+			arrN[0] = arr[0];
+			var k = 1;
+			for(var i = 1; i < arr.length; i++){
+			    if(k >= 6){
+						break;
+					}
+				for(var j = 1; j < arrN.length; j++){
+					if(arr[i] == arrN[j]){
+						break;
+					}
+				}
+				if(j >= arrN.length){
+					arrN[k++] = arr[i];
+				}
+			}
+			arrN.sort(function(a,b){return a-b});
+			var redInt = "";
+			for ( var i = 0; i <arrN.length; i++){
+				redInt += arrN[i] + " ";
+			}
+			$("#red").html(redInt);
+		}
+	});
+	
+	$.ajax({
+		url : "https://www.random.org/integers/?num=1&min=1&max=16&col=5&base=10&format=plain&rnd=new",
+		type : "get",
+		success : function(data) {
+			$("#blue").html(data);
+		}
+	});
+});
+</script>
+</body>
+</html>
