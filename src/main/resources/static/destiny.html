@@ -9,23 +9,21 @@
     <link rel="stylesheet" type="text/css" href="http://www.gaara-xu.com/css/tianming-demo.css" />
     <!--必要样式-->
     <link rel="stylesheet" type="text/css" href="http://www.gaara-xu.com/css/tianming-component.css" />
-    <link rel="stylesheet" type="text/css" href="tianming-ziti.css" />
-
-
     <!--[if IE]>
     <script src="http://www.gaara-xu.com/js/tianming-html5.js"></script>
     <![endif]-->
 </head>
 <body>
-
 <div class="container demo-1">
     <div class="content">
-
         <div id="large-header" class="large-header">
-            <p class="one" th:text="${gua}"></p>
-
             <canvas id="demo-canvas"></canvas>
-            <div class="logo_box">
+            <div class="logo_box" style="top:30%;left:3%;right:3%;margin-left:3%;width: auto">
+                <h3 th:text="${gua}"></h3>
+                <h3 th:text="${guaxiang}"></h3>
+                <h5 th:text="${guaci}" style="font-size: 0.99em"></h5>
+                <h3 th:text="${yao}"></h3>
+                <h5 th:text="${yaoci}"></h5>
 
             </div>
         </div>

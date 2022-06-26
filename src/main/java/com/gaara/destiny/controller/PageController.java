@@ -54,8 +54,14 @@ public class PageController {
             String 卦相 = Destiny.getContextForIndex(indexOf64);
             String 卦辞 = Destiny.getAdmin64Info(indexOf64);
             String page = Destiny.getPageForIndex64(indexOf64);
-            map.put("gua", 卦+" \r\n"+卦相+" \r\n"+卦辞+" \r\n"+"第"+xx+"爻"
-                    +Destiny.getXXInfoByindexAndXX(indexOf64,xx)+"在《易经》第"+page+"页。");
+            /*map.put("gua", 卦+" \r\n"+卦相+" \r\n"+卦辞+" \r\n"+"第"+xx+"爻"
+                    +Destiny.getXXInfoByindexAndXX(indexOf64,xx)+"在《易经》第"+page+"页。");*/
+            map.put("gua",卦);
+            map.put("guaxiang",卦相);
+            map.put("guaci",卦辞);
+            map.put("yao","第"+xx+"爻");
+            map.put("yaoci",Destiny.getXXInfoByindexAndXX(indexOf64,xx));
+
             //map.addAttribute("guaci",卦辞);
             //map.addAttribute("yao",);
             //map.addAttribute("page","第"+page+"页。");
